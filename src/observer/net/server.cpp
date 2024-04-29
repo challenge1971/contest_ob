@@ -151,7 +151,7 @@ int NetServer::start_tcp_server()
 {
   int                ret = 0;
   struct sockaddr_in sa;
-
+  printf("--------------------------start tcp server\n");
   server_socket_ = socket(AF_INET, SOCK_STREAM, 0);
   if (server_socket_ < 0) {
     LOG_ERROR("socket(): can not create server socket: %s.", strerror(errno));
@@ -200,7 +200,7 @@ int NetServer::start_tcp_server()
 
 int NetServer::start_unix_socket_server()
 {
-  int ret        = 0;
+  int ret        = 0;  printf("--------------------------start socket server\n");
   server_socket_ = socket(PF_UNIX, SOCK_STREAM, 0);
   if (server_socket_ < 0) {
     LOG_ERROR("socket(): can not create unix socket: %s.", strerror(errno));
